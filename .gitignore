@@ -1,0 +1,14 @@
+node_modules/
+
+# Secrets - never commit real credentials
+.env
+.env.local
+
+# Saved login sessions
+/playwright/.auth/
+
+# Playwright artifacts
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/

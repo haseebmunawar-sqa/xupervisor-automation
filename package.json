@@ -1,0 +1,28 @@
+{
+  "name": "xupervisor-automation",
+  "version": "1.0.0",
+  "description": "End-to-end UI test automation for the Xupervisor web app, built with Playwright — Page Object Model, fixtures, data-driven role tests, CI, and HTML reports.",
+  "type": "module",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:chromium": "playwright test --project=chromium",
+    "test:auth": "playwright test tests/auth",
+    "test:ui": "playwright test --ui",
+    "report": "playwright show-report"
+  },
+  "keywords": [
+    "playwright",
+    "qa",
+    "test-automation",
+    "e2e",
+    "page-object-model",
+    "ci"
+  ],
+  "author": "Haseeb Munawar <sqaengineer.haseeb@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.48.0",
+    "dotenv": "^16.4.5"
+  }
+}
