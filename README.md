@@ -61,7 +61,15 @@ npm run report          # open the last HTML report
 
 The `setup` project signs in once per role and saves the session under
 `playwright/.auth/`. Module specs reuse those sessions, so they do not repeat the
-login form. Login and access-control specs run against the login form directly.
+login form. Login specs run against the login form directly.
+
+### Browser coverage
+
+Locally the suite runs against Chromium, Firefox, and WebKit. CI runs Chromium
+only: the target is a shared development environment that slows down under
+repeated sign-ins, and the full matrix triples the number of logins per run,
+which made builds fail on timeouts rather than on real defects. To run the full
+matrix in CI, set `ALL_BROWSERS=1`.
 
 ## Coverage
 

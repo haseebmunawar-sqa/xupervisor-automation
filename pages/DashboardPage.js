@@ -15,8 +15,11 @@ export class DashboardPage extends BasePage {
   }
 
   async expectLoaded() {
-    // The dev server can be slow to redirect after login, so allow extra time.
-    await expect(this.page).toHaveURL(/\/dashboard/, { timeout: 45_000 });
+    // The dev server is slow to redirect after login and slower still on CI,
+    // where sign-ins from the whole suite queue up behind each other.
+    await expect(this.page).toHaveURL(/\/dashboard/, {
+      timeout: process.env.CI ? 90_000 : 45_000,
+    });
     await this.sidebar.waitReady();
   }
 }
